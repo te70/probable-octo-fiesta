@@ -11,6 +11,17 @@ const DetailsHeader = ({ data, navigation }) => (
       resizeMode="cover"
       style={{ width: '100%', height: '100%' }}
     />
+    <CircleButton
+       imgUrl={assets.left}
+       handlePress={() => navigation.goBack()}
+       left={15}
+       top={StatusBar.currentHeight + 10}
+    />
+    <CircleButton
+       imgUrl={assets.heart}
+       right={15}
+       top={StatusBar.currentHeight + 10}
+    />
   </View>
 )
 
@@ -46,6 +57,20 @@ const DetailsScreen = ({ route, navigation }) => {
       ListHeaderComponent={() => (
         <React.Fragment>
           <DetailsHeader data={data} navigation={navigation}/>
+          <SubInfo/>
+          <View style={{ padding:SIZES.font }}>
+              <DetailsDesc data={data} />
+
+              {data.bids.length > 0 && (
+                <Text style={{
+                  fontSize: SIZES.font,
+                  fontFamily: FONTS.semiBold,
+                  color: COLORS.primary,
+                }}>
+                  Current Bid
+                </Text>
+              )}
+          </View>
         </React.Fragment>
       )}
     />
