@@ -1,5 +1,5 @@
 
-# ProNef NFT Mobile App
+# ProNef NFT Mobile App Created using React and JS
 
 The mobile application showcases NFTs. It has two screens, the NFT list screen and the details of each NFT.
 
